@@ -1,0 +1,41 @@
+server:
+  port: ${PORT:8080}
+
+spring:
+  application:
+    name: openapi-codegen
+  jackson:
+    default-property-inclusion: NON_NULL
+  output:
+    ansi:
+      enabled: always
+  main:
+    banner-mode: "off"
+
+springfox:
+  documentation:
+    swagger:
+      v2:
+        path: /v2/api-docs/swagger.json
+
+# Logging level configuration
+logging:
+  level:
+    root: INFO
+    com.github.pwnmn: DEBUG
+
+# Feign configuration
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 10000
+        readTimeout: 10000
+        loggerLevel: full
+
+pet:
+  url: https://petstore3.swagger.io
+store:
+  url: https://petstore3.swagger.io
+user:
+  url: https://petstore3.swagger.io
