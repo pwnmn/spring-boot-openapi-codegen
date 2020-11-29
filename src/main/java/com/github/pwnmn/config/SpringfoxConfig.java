@@ -3,6 +3,7 @@ package com.github.pwnmn.config;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.info.GitProperties;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
@@ -17,6 +18,7 @@ import java.time.format.DateTimeFormatter;
 /**
  * Springfox configuration which exposes the swagger definition of the generated server.
  */
+@Configuration
 public class SpringfoxConfig {
 
     private final GitProperties gitProperties;
@@ -29,10 +31,10 @@ public class SpringfoxConfig {
     public Docket internalApi() {
         Docket thisDocket;
         thisDocket = new Docket(DocumentationType.SWAGGER_2)
-                .groupName("Octobus IoT Platform API")
+                .groupName("OpenApi Codegen")
                 .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("gitlab.com.pwnmn"))
+                .apis(RequestHandlerSelectors.basePackage("com.github.pwnmn.server"))
                 .paths(PathSelectors.any())
                 .build()
                 .forCodeGeneration(true);
