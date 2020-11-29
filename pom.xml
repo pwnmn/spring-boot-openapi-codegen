@@ -7,18 +7,7 @@
     <groupId>org.example</groupId>
     <artifactId>Spring-Boot-Openapi-Codegen</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>14</source>
-                    <target>14</target>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+
     <packaging>jar</packaging>
     <name>spring-boot-openapi-codegen</name>
 
@@ -30,8 +19,7 @@
     </parent>
 
     <properties>
-        <maven.compiler.target>15</maven.compiler.target>
-        <maven.compiler.source>15</maven.compiler.source>
+        <maven.compiler.release>13</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <default.package>com.github.pwnmn</default.package>
@@ -39,8 +27,13 @@
 
         <maven.build.timestamp.format>yyyy-MM-dd-HH-mm</maven.build.timestamp.format>
 
-        <version.openapi-generator>4.2.3</version.openapi-generator>
+        <version.openapi-generator>5.0.0-beta3</version.openapi-generator>
         <version.spring-cloud>Hoxton.SR5</version.spring-cloud>
+        <version.springfox>3.0.0</version.springfox>
+        <version.hibernate-validator>6.1.6.Final</version.hibernate-validator>
+        <version.jackson-databind-nullable>0.2.1</version.jackson-databind-nullable>
+        <version.lombok>1.18.16</version.lombok>
+        <version.git-commit-id-plugin>4.0.3</version.git-commit-id-plugin>
     </properties>
 
     <dependencyManagement>
@@ -78,6 +71,17 @@
         </dependency>
 
         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-oauth2</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
@@ -85,7 +89,7 @@
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-boot-starter</artifactId>
-            <version>3.0.0</version>
+            <version>${version.springfox}</version>
         </dependency>
 
         <dependency>
@@ -96,15 +100,35 @@
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-validator</artifactId>
-            <version>6.1.6.Final</version>
+            <version>${version.hibernate-validator}</version>
         </dependency>
 
         <dependency>
             <groupId>org.openapitools</groupId>
             <artifactId>jackson-databind-nullable</artifactId>
-            <version>0.2.1</version>
+            <version>${version.jackson-databind-nullable}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${version.lombok}</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>pl.project13.maven</groupId>
+                <artifactId>git-commit-id-plugin</artifactId>
+                <version>${version.git-commit-id-plugin}</version>
+                <configuration>
+                    <excludeProperties>git.build.user.*,git.commit.user.*,git.remote.*,git.closest.*</excludeProperties>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
     <profiles>
         <profile>
@@ -211,6 +235,7 @@
                                         <interfaceOnly>false</interfaceOnly>
                                         <useOptional>false</useOptional>
                                         <serializableModel>true</serializableModel>
+                                        <configPackage>${default.package}.client.petstore.config</configPackage>
                                     </configOptions>
                                 </configuration>
                             </execution>

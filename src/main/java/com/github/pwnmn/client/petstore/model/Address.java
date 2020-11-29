@@ -9,8 +9,7 @@ import java.util.Objects;
 /**
  * Address
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-11-28T18:32:53.298340+07:00[Asia/Bangkok]")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-11-29T16:59:23.725381+07:00[Asia/Bangkok]")
 public class Address  implements Serializable {
   private static final long serialVersionUID = 1L;
 
@@ -131,7 +130,7 @@ public class Address  implements Serializable {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Address {\n");
-
+    
     sb.append("    street: ").append(toIndentedString(street)).append("\n");
     sb.append("    city: ").append(toIndentedString(city)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");

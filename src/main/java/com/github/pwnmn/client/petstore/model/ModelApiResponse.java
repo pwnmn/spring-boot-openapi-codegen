@@ -9,8 +9,7 @@ import java.util.Objects;
 /**
  * ModelApiResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-11-28T18:32:53.298340+07:00[Asia/Bangkok]")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-11-29T16:59:23.725381+07:00[Asia/Bangkok]")
 public class ModelApiResponse  implements Serializable {
   private static final long serialVersionUID = 1L;
 
@@ -107,7 +106,7 @@ public class ModelApiResponse  implements Serializable {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ModelApiResponse {\n");
-
+    
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");

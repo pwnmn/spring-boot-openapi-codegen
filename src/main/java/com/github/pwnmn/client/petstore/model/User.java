@@ -9,8 +9,7 @@ import java.util.Objects;
 /**
  * User
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-11-28T18:32:53.298340+07:00[Asia/Bangkok]")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-11-29T16:59:23.725381+07:00[Asia/Bangkok]")
 public class User  implements Serializable {
   private static final long serialVersionUID = 1L;
 
@@ -227,7 +226,7 @@ public class User  implements Serializable {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class User {\n");
-
+    
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    username: ").append(toIndentedString(username)).append("\n");
     sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");

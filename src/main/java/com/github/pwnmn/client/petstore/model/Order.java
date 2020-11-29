@@ -13,8 +13,7 @@ import java.util.Objects;
 /**
  * Order
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-11-28T18:32:53.298340+07:00[Asia/Bangkok]")
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-11-29T16:59:23.725381+07:00[Asia/Bangkok]")
 public class Order  implements Serializable {
   private static final long serialVersionUID = 1L;
 
@@ -28,6 +27,7 @@ public class Order  implements Serializable {
   private Integer quantity;
 
   @JsonProperty("shipDate")
+  @org.springframework.format.annotation.DateTimeFormat(iso = org.springframework.format.annotation.DateTimeFormat.ISO.DATE_TIME)
   private OffsetDateTime shipDate;
 
   /**
@@ -221,7 +221,7 @@ public class Order  implements Serializable {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Order {\n");
-
+    
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    petId: ").append(toIndentedString(petId)).append("\n");
     sb.append("    quantity: ").append(toIndentedString(quantity)).append("\n");
