@@ -19,7 +19,6 @@
     </parent>
 
     <properties>
-        <maven.compiler.release>13</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <default.package>com.github.pwnmn</default.package>
