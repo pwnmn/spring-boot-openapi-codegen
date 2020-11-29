@@ -28,7 +28,6 @@ and server (Spring Boot REST) from it.
 
 ### Built With
 
-This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 
 * [OpenAPI 3 Specification](https://swagger.io/specification/)
 * [Spring Boot](https://spring.io/)
